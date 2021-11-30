@@ -23,3 +23,12 @@ export interface ProductoCardHOCProps {
     ({product, children}: ProductCardProps): JSX.Element,
     //Props es lo q mandamos de los componentes.
 }
+
+export interface onChangeArgs {
+    product: Product,
+    count: number,
+}
+
+export interface ProductInCart extends Product{
+    count: number,
+}

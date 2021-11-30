@@ -4,7 +4,7 @@ import {productContext} from "./ProductCard";
 
 export interface Props {
     className?: string,
-    style?:  CSSProperties
+    style?:  CSSProperties,
 }
 
 export const ProductButtons = ({className, style}: Props) => {
