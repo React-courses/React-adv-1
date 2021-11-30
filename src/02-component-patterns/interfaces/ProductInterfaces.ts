@@ -1,9 +1,8 @@
 import {ReactElement} from "react";
-
-export interface ProductCardProps {
-    product: Product,
-    children?: ReactElement | ReactElement[],
-}
+import {Props as ProductCardProps} from "../components/ProductCard";
+import {ProductTitleProps} from "../components/ProductTitle";
+import {ProductImageProps} from "../components/ProductImage";
+import {Props as ProductButtonProps} from "../components/ProductButtons";
 
 export interface Product {
     id: string,
@@ -13,13 +12,14 @@ export interface Product {
 
 export interface ProductContextProps {
     counter: number,
+    product: Product,
     increaseBy: (value: number) => void,
-    product: Product
 }
 
 export interface ProductoCardHOCProps {
+    Title: (Props: ProductTitleProps) => JSX.Element,
+    Image: (Props: ProductImageProps) => JSX.Element,
+    Buttons: (Props: ProductButtonProps) => JSX.Element,
     ({product, children}: ProductCardProps): JSX.Element,
-    Title: ({title}: {title?: string}) => JSX.Element,
-    Image: ({img}: {img?: string}) => JSX.Element,
-    Buttons: () => JSX.Element
+    //Props es lo q mandamos de los componentes.
 }
