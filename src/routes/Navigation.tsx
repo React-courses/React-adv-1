@@ -3,7 +3,7 @@ import {BrowserRouter, Navigate, NavLink, Route, Routes} from "react-router-dom"
 import logo from '../logo.svg';
 import {
     FormikYupPage, FormikComponents, FormikAbstractation,
-    FormikBasicPage, RegisterPage} from '../03-forms/pages'
+    FormikBasicPage, RegisterPage, RegisterFormikPage, DynamicForm} from '../03-forms/pages'
 
 const Navigation = () => {
     return (
@@ -42,6 +42,18 @@ const Navigation = () => {
                                 className={({isActive}) => isActive ? 'nav-active' : ''}
                             >Formik Abstractation</NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/register-formik-page"
+                                className={({isActive}) => isActive ? 'nav-active' : ''}
+                            >Register Formik Page</NavLink>
+                        </li>
+                        <li>
+                            <NavLink
+                                to="/dynamic-form"
+                                className={({isActive}) => isActive ? 'nav-active' : ''}
+                            >Dynamic Form Page</NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <Routes>
@@ -50,6 +62,8 @@ const Navigation = () => {
                     <Route path="formik-yup" element={<FormikYupPage/>}/>
                     <Route path="formik-components" element={<FormikComponents/>}/>
                     <Route path="formik-abstractation" element={<FormikAbstractation/>}/>
+                    <Route path="register-formik-page" element={<RegisterFormikPage/>}/>
+                    <Route path="dynamic-form" element={<DynamicForm/>}/>
 
                     <Route path="*" element={<Navigate to="/register" replace={true}/>}/>
                 </Routes>
